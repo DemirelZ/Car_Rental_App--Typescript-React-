@@ -1,3 +1,5 @@
+import { CarType } from "../types";
+
 const options = {
   method: "GET",
 
@@ -7,11 +9,17 @@ const options = {
   },
 };
 
-export async function fetchCars() {
+
+
+export async function fetchCars():Promise<CarType[]> {
   const res = await fetch(
     `https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?model=corolla`,
     options
   );
 
-  return await res.json();
+  const result = await res.json();
+
+  return result;
 }
+
+
