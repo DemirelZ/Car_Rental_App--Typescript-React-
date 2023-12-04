@@ -6,6 +6,7 @@ export type ButtonPropsType = {
   btnType?: "button" | "submit" | "reset";
   title: string;
   handleClick?: MouseEventHandler<HTMLButtonElement>;
+  rIcon?:string
 };
 
 export interface CarType {
