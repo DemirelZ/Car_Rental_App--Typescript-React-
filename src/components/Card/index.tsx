@@ -1,4 +1,5 @@
 import { CarType } from "../../types"
+import { generateImage } from "../../utils/generateImage"
 import CustomButton from "../CustomButton"
 import {useState} from 'react'
 

@@ -5,6 +5,7 @@ import SearchBar from "../components/SearchBar";
 import { fetchCars } from "../utils/fetchCars";
 import { CarType } from "../types";
 import Card from "../components/Card";
+import ShowMore from "../components/ShowMore";
 
 const MainPage = () => {
   const [cars, setCars] = useState<CarType[] | null>(null);
@@ -60,7 +61,7 @@ const MainPage = () => {
                 <Card key={i} car={car} />
               ))}
             </div>
-             
+             <ShowMore />
           </section>
         )}
       
