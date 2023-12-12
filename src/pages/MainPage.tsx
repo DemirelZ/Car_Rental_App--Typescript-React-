@@ -6,16 +6,21 @@ import { fetchCars } from "../utils/fetchCars";
 import { CarType } from "../types";
 import Card from "../components/Card";
 import ShowMore from "../components/ShowMore";
+import { useSearchParams } from "react-router-dom";
 
 const MainPage = () => {
+  const [params] = useSearchParams();
   const [cars, setCars] = useState<CarType[] | null>(null);
   const [isError, setIsError] = useState<boolean>(false);
 
   useEffect(() => {
-    fetchCars()
+    // url'deki bütün parametreleri al ve obje oluştur
+    const paramsObj = Object.fromEntries(params.entries());
+
+    fetchCars(paramsObj)
       .then((res) => setCars(res))
       .catch(() => setIsError(true));
-  }, []);
+  }, [params]);
 
   return (
     <div>
