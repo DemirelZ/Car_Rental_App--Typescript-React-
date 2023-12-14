@@ -1,5 +1,5 @@
-import { useSearchParams } from 'react-router-dom';
-import CustomButton from '../CustomButton';
+import { useSearchParams } from "react-router-dom";
+import CustomButton from "../CustomButton";
 
 const ShowMore = () => {
   const [params, setParams] = useSearchParams();
@@ -13,13 +13,13 @@ const ShowMore = () => {
   // * butona basınca url'deki paramtreyi alıcaz ve 5 ekliyecez
 
   // url'den limiti al yoksa 5 olarak belirle
-  const limit = Number(params.get('limit')) || 5;
+  const limit = Number(params.get("limit")) || 5;
 
   const handleLimit = () => {
     // yeni limiti belirle
     const newLimit = String(limit + 5);
     // param değişkenini günceller
-    params.set('limit', newLimit);
+    params.set("limit", newLimit);
     // url'i güncelle
     setParams(params);
   };

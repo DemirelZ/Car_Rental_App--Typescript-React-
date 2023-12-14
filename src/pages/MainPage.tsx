@@ -7,6 +7,7 @@ import { CarType } from "../types";
 import Card from "../components/Card";
 import ShowMore from "../components/ShowMore";
 import { useSearchParams } from "react-router-dom";
+import { fuels, years } from "../constants";
 
 const MainPage = () => {
   const [params] = useSearchParams();
@@ -31,23 +32,22 @@ const MainPage = () => {
           <h1 className="text-4xl font-extrabold">Araba Kataloğu</h1>
           <p>Beğenebileceğin arabaları keşfet</p>
         </div>
-      </div>
 
-      <div className="home__filters">
-        <SearchBar />
-        <div className="home__filter-container">
-          <CustomFilter />
-          <CustomFilter />
+        <div className="home__filters">
+          <SearchBar />
+          <div className="home__filter-container">
+            <CustomFilter title="Yakıt Tipi" options={fuels} />
+            <CustomFilter title="Üretim Yılı" options={years} />
+          </div>
         </div>
-      </div>
 
-      {isError && (
-        <div>
-          <h2>Üzgünüz Bir Sorun Oluştu</h2>
-        </div>
-      )}
+        {isError && (
+          <div>
+            <h2>Üzgünüz Bir Sorun Oluştu</h2>
+          </div>
+        )}
 
-{!cars ? (
+        {!cars ? (
           <div className="home__error-container">
             <h2>Yükleniyor...</h2>
           </div>
@@ -66,10 +66,10 @@ const MainPage = () => {
                 <Card key={i} car={car} />
               ))}
             </div>
-             <ShowMore />
+            <ShowMore />
           </section>
         )}
-      
+      </div>
     </div>
   );
 };

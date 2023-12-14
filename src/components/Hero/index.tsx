@@ -1,9 +1,10 @@
 import CustomButton from "../CustomButton";
+import { motion } from "framer-motion";
 
 const Hero = () => {
   // TODO aşağıya kaydırma işlemi yapılacak
   const flyTo = (): void => {
-    alert("aşşağıya kayrdır");
+    alert("Katalogdan arama yapabilirsiniz");
   };
 
   return (
@@ -23,7 +24,21 @@ const Hero = () => {
         />
       </div>
       <div className="flex justify-center">
-        <img className="object-contain" src="/hero.png" />
+        <motion.img
+          initial={{
+            translateX: 200,
+            scale: 0.7,
+          }}
+          whileInView={{
+            translateX: 0,
+            scale: 1,
+          }}
+          transition={{
+            duration: 1,
+          }}
+          className="object-contain"
+          src="/hero.png"
+        />
       </div>
     </div>
   );
