@@ -1,11 +1,21 @@
-# Kütüphaneler
+# Car-Rental-App
+
+Developed a car rental application with various filtering features using TYPESCRIPT
+
+# Libraries
 
 - React
 - Typescript
-- react-router-dom
-- react-select
-- tailwind
+- React-router-dom
+- React-select
+- Tailwind
+- Framer-motion
 
-# Kaynak
+# Source
 
 - API: https://rapidapi.com/apininjas/api/cars-by-api-ninjas
+  <br/>
+
+<h2> Find the screen gif below </h2>
+
+![](/public/rc.gif)
