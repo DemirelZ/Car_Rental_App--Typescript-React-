@@ -18,4 +18,4 @@ Developed a car rental application with various filtering features using TYPESCR
 
 <h2> Find the screen gif below </h2>
 
-![](/public/rc.gif)
+![](/public/rcyb.gif)
